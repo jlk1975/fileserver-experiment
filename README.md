@@ -1,6 +1,6 @@
 # fileserver-experiment
 
-# Setup
+## Setup
 
 - East Coast
   - Laptop/Workstation
