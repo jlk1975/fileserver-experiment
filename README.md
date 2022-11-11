@@ -5,8 +5,8 @@
 - East Coast
   - Laptop/Workstation
     - Sign up for Linode account at linode.com
-Obtain a personal access token for Linode’s v4 API to use with Terraform
-mkdir ~terraform
+    - Obtain a personal access token for Linode’s v4 API to use with Terraform
+    - ```mkdir ~terraform```
  
 Manual install of terraform on it to bootstrap my Control Server creation in Linode.
 Linode Servers
