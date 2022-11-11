@@ -9,6 +9,16 @@
     - Install Terraform
     - ```mkdir ~terraform```
     - ```cd ~terraform```
+    - ```wget https://releases.hashicorp.com/terraform/1.3.4/terraform_1.3.4_linux_amd64.zip```
+    - ```wget https://releases.hashicorp.com/terraform/1.3.4/terraform_1.3.4_SHA256SUMS```
+    - ```wget https://releases.hashicorp.com/terraform/1.3.4/terraform_1.3.4_SHA256SUMS.sig```
+    - Download the GPG public key, the file you want to verify, and its corresponding signature file. 
+    - Name the key hashicorp.asc. 
+    - Navigate to the directory where you saved hashicorp.asc and run the following command:
+    - ```gpg --import hashicorp.asc```
+
+    
+
   - Linode Servers
     - Control Server 
       - Git
