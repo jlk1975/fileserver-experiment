@@ -78,12 +78,12 @@
           - ```./node_exporter```
           - ```curl http://localhost:9100/metrics```
           - You should see output like this:
-            - # HELP go_gc_duration_seconds A summary of the GC invocation durations.
-            - # TYPE go_gc_duration_seconds summary
+            - HELP go_gc_duration_seconds A summary of the GC invocation durations.
+            - TYPE go_gc_duration_seconds summary
             - go_gc_duration_seconds{quantile="0"} 3.8996e-05
             - go_gc_duration_seconds{quantile="0.25"} 4.5926e-05
             - go_gc_duration_seconds{quantile="0.5"} 5.846e-05
-            - # etc.
+            - etc.
             - Success! The Node Exporter is now exposing metrics that Prometheus can scrape, including a wide variety - - of system metrics further down in the output (prefixed with node_). 
             - To view those metrics (along with help and type information):
             - ```curl http://localhost:9100/metrics | grep "node_"```
