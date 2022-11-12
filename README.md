@@ -44,6 +44,40 @@
     -Prometheus Stuff
       - Plain ol Prometheus: 
         - https://prometheus.io/docs/prometheus/latest/getting_started/
+        - ```wget https://github.com/prometheus/prometheus/releases/download/v2.40.1/prometheus-2.40.1.linux-amd64.tar.gz```
+        - ```tar xvfz prometheus-*.tar.gz```
+        - ```cd prometheus-*```
+        - Prometheus collects metrics from targets by scraping metrics HTTP endpoints. Since Prometheus exposes data in the same manner about itself, it can also scrape and monitor its own health.
+        - ```cp ./prometheus/prometheus.yaml ~/directory_you_untarred_prometheus_binary_into```
+        - To start Prometheus with your newly created configuration file, change to the directory containing the Prometheus binary and run:
+        - ```# Start Prometheus.```
+        - ```# By default, Prometheus stores its database in ./data (flag --storage.tsdb.path).```
+        - ```cd ~/directory_you_untarred_prometheus_binary_into```
+        - ```./prometheus --config.file=prometheus.yml```
+        - Point your web browser to http://localhost:9090/
+        - Prometheus should be running now!
+        - Go to http://localhost:9090/graph
+        - Query Examples:
+        - prometheus_target_interval_length_seconds
+        - prometheus_target_interval_length_seconds{quantile="0.99"}
+        - To count the number of returned time series, you could write:
+        - count(prometheus_target_interval_length_seconds)
+        - To graph expressions, navigate to http://localhost:9090/graph and use the "Graph" tab.
+        - For example, enter the following expression to graph the per-second rate of chunks being created in the self-scraped Prometheus:
+        - rate(prometheus_tsdb_head_chunks_created_total[1m])
+        - More things to do with Prometheus can be found here:
+          - https://prometheus.io/docs/prometheus/latest/getting_started/
+        - MONITORING LINUX HOST METRICS WITH THE NODE EXPORTER (how to tie into grafana?)
+          - https://prometheus.io/docs/guides/node-exporter/
+          - Start up a Node Exporter on localhost
+          - Start up a Prometheus instance on localhost that's configured to scrape metrics from the running Node Exporter
+          - The Prometheus Node Exporter is a single static binary that you can install via tarball. Once you've downloaded it from the Prometheus downloads page extract it, and run it:
+          - ```wget https://github.com/prometheus/node_exporter/releases/download/v*/node_exporter-*.*-amd64.tar.gz```
+          - ```tar xvfz node_exporter-*.*-amd64.tar.gz```
+          - ```cd node_exporter-*.*-amd64```
+          - ```./node_exporter```
+        
+
       - Prometheus node_exporter: 
         - https://prometheus.io/download/#node_exporter
       - Prometheus node_exporter installed using Ansible:
