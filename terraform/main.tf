@@ -21,7 +21,6 @@ resource "linode_instance" "terraform-control" {
         authorized_keys = [var.authorized_keys]
         root_pass = var.root_pass
 }
-*/
 resource "linode_instance" "terraform-fileserver1" {
         image = "linode/centos-stream9"
         label = "Terraform-Fileserver1"
@@ -31,3 +30,4 @@ resource "linode_instance" "terraform-fileserver1" {
         authorized_keys = [var.authorized_keys]
         root_pass = var.root_pass
 }
+*/
