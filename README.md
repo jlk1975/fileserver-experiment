@@ -6,7 +6,7 @@
   - Laptop/Workstation
     - Sign up for Linode account at linode.com
     - Obtain a personal access token for Linode’s v4 API to use with Terraform
-    - Install Terraform
+    - Install Terraform (Laptop)
       - ```mkdir ~terraform```
       - ```cd ~terraform```
       - ```wget https://releases.hashicorp.com/terraform/1.3.4/terraform_1.3.4_linux_amd64.zip```
@@ -41,7 +41,9 @@
       - ```terraform plan -var-file="secret.tfvars"```
       - ```terraform apply -var-file="secret.tfvars"```
       - 
-
+    -Install Ansible (Laptop)
+      - tbd
+      - tbd
 
 
 
@@ -49,9 +51,9 @@
 
   - Linode Servers
     - Control Server 
+      - Let's not install Terraform here, just use it on laptop/workstation for now.
+      - Let's not install Ansible here, just use it on laptop/workstation for now.
       - Git
-      - Terraform
-      - Ansible
       - Grafana Dashboard
       - JMeter?  
       - Siege?
