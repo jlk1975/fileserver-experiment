@@ -45,7 +45,11 @@
       - ```ansible --version```
       - Make sure your ssh key for root works
       - ```ansible -u root -i 97.107.136.196, -m shell -a 'hostname' all```
-      - 
+      - ```mkdir roles```
+      - ```cd roles```
+      - ```ansible-galaxy init grafana```
+      - ```ansible-galaxy init prometheus```
+      - ```ansible-galaxy init prometheus-node-exporter```
 
     -Prometheus Stuff
       - Plain ol Prometheus: 
