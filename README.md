@@ -48,6 +48,8 @@
         - https://prometheus.io/download/#node_exporter
       - Prometheus node_exporter installed using Ansible:
         - https://github.com/cloudalchemy/ansible-node-exporter
+      - Prometheus Alert Manager
+        - https://prometheus.io/download/#alertmanager 
     -Install Ansible (Laptop)
       - next steps, install the linode cli, then
       - login to your new file server instance and get a golang file server
@@ -57,6 +59,7 @@
       - after that, provision a client server 
       - and do the same thing. 
       - tbd
+    - Splunk Stuff?
 
 
 
