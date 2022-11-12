@@ -68,6 +68,17 @@ resource "linode_firewall" "my_firewall" {
   linodes = [linode_instance.terraform-control.id]
 }
 
+resource "linode_stackscript" "terraform-control" {
+  label = "foo"
+  description = "Sets hostname"
+  script = <<EOF
+#!/bin/bash
+hostnamectl set-hostname controller01
+EOF
+  images = ["linode/debian10"]
+  rev_note = "initial version"
+}
+
 resource "linode_instance" "terraform-control" {
         image = "linode/debian10"
         label = "Terraform-Control"
@@ -76,4 +87,6 @@ resource "linode_instance" "terraform-control" {
         type = "g6-nanode-1"
         authorized_keys = [var.authorized_keys]
         root_pass = var.root_pass
+
+        stackscript_id = linode_stackscript.terraform-control.id
 }

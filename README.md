@@ -6,7 +6,7 @@
   - Laptop/Workstation
     - Sign up for Linode account at linode.com
     - Obtain a personal access token for Linode’s v4 API to use with Terraform
-    - Install Terraform (Laptop)
+    - Install Terraform (Arch Linux Laptop)
       - ```mkdir ~terraform```
       - ```cd ~terraform```
       - ```wget https://releases.hashicorp.com/terraform/1.3.4/terraform_1.3.4_linux_amd64.zip```
@@ -40,6 +40,8 @@
       - ```terraform init```
       - ```terraform plan -var-file="secret.tfvars"```
       - ```terraform apply -var-file="secret.tfvars"```
+    - Install Ansible (Arch Linux Laptop)
+      - sudo pacman -S ansible
       - 
     -Prometheus Stuff
       - Plain ol Prometheus: 
@@ -113,10 +115,6 @@
        - But you can install and run Prometheus on 1 machine of your choice.
        - Install Prometheus node_exporter
 Prometheus node_exporter is a widely used tool that exposes system metrics. Install node_exporter on all hosts you want to monitor.
-    - 
-
-        
-
       - Prometheus node_exporter: 
         - https://prometheus.io/download/#node_exporter
       - Prometheus node_exporter installed using Ansible:
@@ -165,8 +163,9 @@ Prometheus node_exporter is a widely used tool that exposes system metrics. Inst
           - Configure the Grafana server to start at boot:
           - ```sudo systemctl enable grafana-server.service```
           - https://grafana.com/docs/grafana/latest/getting-started/build-first-dashboard/
-          - Next GO THROUGH THIS DOC:
           - https://grafana.com/docs/grafana/latest/datasources/add-a-data-source/
+          - DIG INTO THIS NEXT:
+          - https://grafana.com/docs/grafana/latest/administration/data-source-management/
 
           - Then, install Ansible on your laptop and write some Ansible to install and configure Grafana on your linode Control instance. Maybe save docker for your golang fileserver
           app since it's going to need to be deployed to more than one fileserver, and since
