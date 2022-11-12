@@ -29,6 +29,11 @@
     - You want to see output that looks like this: "sha256sum -c terraform*SHA256SUMS 2>&1 | grep OK"
     - Configure Terraform
       - ```unzip terraform_*_linux_amd64.zip```
+      - ```echo 'export PATH="$PATH:$HOME/terraform"' >> ~/.profile```
+      - ```source ~/.profile```
+      - Verify terraform can run by running:
+      - ```terraform```
+      - 
 
 
 
