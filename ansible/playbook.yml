@@ -1,4 +1,4 @@
 ---
-- hosts: webservers
+- hosts: controller_servers
   roles:
     - grafana

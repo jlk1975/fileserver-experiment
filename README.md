@@ -50,6 +50,8 @@
       - ```ansible-galaxy init grafana```
       - ```ansible-galaxy init prometheus```
       - ```ansible-galaxy init prometheus-node-exporter```
+      - ```ansible-playbook -u root -i ./inventory.yml playbook.yml```
+      
 
     -Prometheus Stuff
       - Plain ol Prometheus: 

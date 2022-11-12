@@ -1,13 +1,19 @@
 all:
   hosts:
-    mail.example.com:
+    97.107.136.196: #controller01
   children:
-    webservers:
+    controller_servers:
       hosts:
-        foo.example.com:
-        bar.example.com:
-    dbservers:
-      hosts:
-        one.example.com:
-        two.example.com:
-        three.example.com:
+        97.107.136.196: #controller01 
+    # file_servers:
+      # hosts:
+        # XX.XXX.XXX.XXX: #fileserver01
+    # cdn_servers:
+      # hosts:
+        # XX.XXX.XXX.XXX: #cdnserver01
+        # XX.XXX.XXX.XXX: #cdnserver02
+    # client_servers:
+      # hosts:
+        # XX.XXX.XXX.XXX: #clientserver01
+        # XX.XXX.XXX.XXX: #clientserver02
+    
