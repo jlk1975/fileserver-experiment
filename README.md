@@ -76,6 +76,33 @@
           - ```tar xvf node_exporter-1.4.0.linux-amd64.tar.gz```
           - ```cd node_exporter-1.4.0.linux-amd64```
           - ```./node_exporter```
+          - ```curl http://localhost:9100/metrics```
+          - You should see output like this:
+            - # HELP go_gc_duration_seconds A summary of the GC invocation durations.
+            - # TYPE go_gc_duration_seconds summary
+            - go_gc_duration_seconds{quantile="0"} 3.8996e-05
+            - go_gc_duration_seconds{quantile="0.25"} 4.5926e-05
+            - go_gc_duration_seconds{quantile="0.5"} 5.846e-05
+            - # etc.
+            - Success! The Node Exporter is now exposing metrics that Prometheus can scrape, including a wide variety - - of system metrics further down in the output (prefixed with node_). 
+            - To view those metrics (along with help and type information):
+            - ```curl http://localhost:9100/metrics | grep "node_"```
+            - https://prometheus.io/docs/guides/node-exporter/
+            - Configuring your Prometheus instances
+            - Your locally running Prometheus instance needs to be properly configured in order to access Node Exporter metrics. The following prometheus.yml example configuration file will tell the Prometheus instance to scrape, and how frequently, from the Node Exporter via localhost:9100:
+            ```global:
+            scrape_interval: 15s
+
+            scrape_configs:
+            - job_name: node
+            static_configs:
+            - targets: ['localhost:9100']```
+            - Update prometheus.yaml file with above snippet and restart prometheus
+            - ```./prometheus --config.file=prometheus.yaml```
+            - Exploring Node Exporter metrics through the Prometheus expression browser
+            Now that Prometheus is scraping metrics from a running Node Exporter instance, you can explore those metrics using the Prometheus UI (aka the expression browser). Navigate to localhost:9090/graph in your browser and use the main expression bar at the top of the page to enter expressions. 
+            - 
+
         
 
       - Prometheus node_exporter: 
