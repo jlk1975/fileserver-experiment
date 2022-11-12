@@ -33,6 +33,12 @@
       - ```source ~/.profile```
       - Verify terraform can run by running:
       - ```terraform```
+      - Create a .gitignore file with terraform stuff to ignore (example included in this git repo.)
+      - Create a secret.tfvars file and add your Linode API key into it
+      - Create a linode-control-server.tf file (or use the one in this github repo in the terraform directory.)
+      - cd ~/terraform or cd terraform (into your github checkout of this repo if you prefer)
+      - ```terraform init```
+      - ```terraform apply -var-file="secret.tfvars"```
       - 
 
 

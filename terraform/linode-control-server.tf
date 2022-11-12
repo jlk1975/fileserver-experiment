@@ -2,21 +2,21 @@ terraform {
   required_providers {
     linode = {
       source = "linode/linode"
-      version = "1.29.4"
+      version = "1.29.3"
     }
   }
 }
 
 provider "linode" {
-  token = "YOUR_LINODE_API_TOKEN"
+  token = var.linode_token
 }
 
-resource "linode_instance" "terraform-web" {
+resource "linode_instance" "terraform-control" {
         image = "linode/ubuntu18.04"
-        label = "Terraform-Web-Example"
+        label = "Terraform-Control"
         group = "Terraform"
         region = "us-east"
-        type = "g6-standard-1"
+        type = "g6-nanode-1"
         authorized_keys = [ "YOUR_PUBLIC_SSH_KEY" ]
-        root_pass = "YOUR_ROOT_PASSWORD"
+        root_pass = var.root_pass
 }
