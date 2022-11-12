@@ -105,7 +105,15 @@
             - http://localhost:9090/graph?g0.range_input=1h&g0.expr=rate(node_cpu_seconds_total%7Bmode%3D%22system%22%7D%5B1m%5D)&g0.tab=1
             - http://localhost:9090/graph?g0.range_input=1h&g0.expr=node_filesystem_avail_bytes&g0.tab=1
             - http://localhost:9090/graph?g0.range_input=1h&g0.expr=rate(node_network_receive_bytes_total%5B1m%5D)&g0.tab=1
-            - 
+            - Explore promql:
+            - https://prometheus.io/docs/prometheus/latest/querying/examples/
+     - Now let's add Grafana to the mix:
+       - https://grafana.com/docs/grafana/latest/getting-started/get-started-grafana-prometheus/
+       - So the prometheus node_exporter goes on all nodes you want to monitor.
+       - But you can install and run Prometheus on 1 machine of your choice.
+       - Install Prometheus node_exporter
+Prometheus node_exporter is a widely used tool that exposes system metrics. Install node_exporter on all hosts you want to monitor.
+    - 
 
         
 
@@ -135,16 +143,20 @@
       - Let's not install Terraform here, just use it on laptop/workstation for now.
       - Let's not install Ansible here, just use it on laptop/workstation for now.
       - Git
-      - Grafana Dashboard
+      - Prometheus
+      - Grafana 
       - JMeter?  
       - Siege?
-    - File Server
+    - File Server (Origin)
       - File system
       - Golang file server code
+      - a Prometheus "node_exporter" needs to be here.
     - CDN Server 1
       - VarnishCDN Opensource Software
+      - a Prometheus "node_exporter" needs to be here.
     - Client Server 1 (This is an end client that needs to download files)
       - Can be configured to download from origin file server, or CDN
+      - a Prometheus "node_exporter" needs to be here.
       - wget?
       - curl?
       - Apache JMeter?
@@ -153,6 +165,7 @@
 - West Coast
   - Client Server 2 (This is an end client that needs to download files)
     - Can be configured to download from origin file server, or CDN.
+    - a Prometheus "node_exporter" needs to be here.
     - wget?
     - curl?
     - Apache JMeter?
