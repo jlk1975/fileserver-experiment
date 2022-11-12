@@ -101,6 +101,10 @@
             - ```./prometheus --config.file=prometheus.yaml```
             - Exploring Node Exporter metrics through the Prometheus expression browser
             Now that Prometheus is scraping metrics from a running Node Exporter instance, you can explore those metrics using the Prometheus UI (aka the expression browser). Navigate to localhost:9090/graph in your browser and use the main expression bar at the top of the page to enter expressions. 
+            - Explore some of the node stats that prometheus has scraped from your node_exporter:
+            - http://localhost:9090/graph?g0.range_input=1h&g0.expr=rate(node_cpu_seconds_total%7Bmode%3D%22system%22%7D%5B1m%5D)&g0.tab=1
+            - http://localhost:9090/graph?g0.range_input=1h&g0.expr=node_filesystem_avail_bytes&g0.tab=1
+            - http://localhost:9090/graph?g0.range_input=1h&g0.expr=rate(node_network_receive_bytes_total%5B1m%5D)&g0.tab=1
             - 
 
         
