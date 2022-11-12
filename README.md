@@ -42,7 +42,11 @@
       - ```terraform apply -var-file="secret.tfvars"```
       - 
     -Install Ansible (Laptop)
-      - tbd
+      - next steps, install the linode cli, then
+      - login to your new file server instance and get a golang file server
+      - running manually , just prove out that you can upload/download files over HTTP
+      - from/to your laptop using curl. after that, provision a client server 
+      - and do the same thing.ssh root@69.164.212.172
       - tbd
 
 
