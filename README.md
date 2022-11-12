@@ -51,7 +51,8 @@
       - ```ansible-galaxy init prometheus```
       - ```ansible-galaxy init prometheus-node-exporter```
       - ```ansible-playbook -u root -i ./inventory.yml playbook.yml```
-      
+      - ```ansible-playbook -u root -i ./inventory.yml -l controller_servers playbook.yml```
+
 
     -Prometheus Stuff
       - Plain ol Prometheus: 

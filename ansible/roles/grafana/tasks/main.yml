@@ -3,6 +3,9 @@
   ansible.builtin.apt:
     name: gpg-agent
     state: present
+    update_cache: yes
+
+# try rest of these one by one and see if grafana is running!
 
 #- name: Add grafana signing key
  # ansible.builtin.apt_key:
