@@ -135,7 +135,12 @@ Prometheus node_exporter is a widely used tool that exposes system metrics. Inst
     - Splunk Stuff?
 
 
-
+    - Terraform notes
+      - To get images:
+        - ```curl https://api.linode.com/v4/images```
+        - Plan and Apply
+        - ```terraform plan -var-file="secret.tfvars"```
+        - ```terraform apply -var-file="secret.tfvars"```
     
 
   - Linode Servers
@@ -145,11 +150,33 @@ Prometheus node_exporter is a widely used tool that exposes system metrics. Inst
       - Git
       - Prometheus
       - Grafana 
+        - Use these steps to manually install Grafana next:
+        - GET EVERYTHING WORKING MANUALLY FIRST, THEN AUTOMATE INSTALLS/CONFIGS/DEPLOYMENTS..
+          - https://grafana.com/docs/grafana/latest/setup-grafana/installation/debian/
+          - ```sudo apt-get install -y apt-transport-https```
+          - ```sudo apt-get install -y software-properties-common wget```
+          - ```sudo wget -q -O /usr/share/keyrings/grafana.key https://apt.grafana.com/gpg.key```
+          - ```echo "deb [signed-by=/usr/share/keyrings/grafana.key] https://apt.grafana.com stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list```
+          - ```sudo apt-get update```
+          - ```sudo apt-get install grafana-enterprise```
+          - ```sudo systemctl daemon-reload```
+          - ```sudo systemctl start grafana-server```
+          - ```sudo systemctl status grafana-server```
+          - Configure the Grafana server to start at boot:
+          - ```sudo systemctl enable grafana-server.service```
+          - https://grafana.com/docs/grafana/latest/getting-started/build-first-dashboard/
+          - 
+
+          - Then, install Ansible on your laptop and write some Ansible to install and configure Grafana on your linode Control instance. Maybe save docker for your golang fileserver
+          app since it's going to need to be deployed to more than one fileserver, and since
+          you are likely to update it's code (and you are not likely to update code for Grafana).
       - JMeter?  
       - Siege?
     - File Server (Origin)
       - File system
       - Golang file server code
+        - Might want to also do this , it's a lot but really explains how to use LKE
+        - https://www.linode.com/docs/guides/lke-continuous-deployment-series/
       - a Prometheus "node_exporter" needs to be here.
     - CDN Server 1
       - VarnishCDN Opensource Software
