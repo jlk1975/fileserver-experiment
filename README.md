@@ -41,8 +41,12 @@
       - ```terraform plan -var-file="secret.tfvars"```
       - ```terraform apply -var-file="secret.tfvars"```
     - Install Ansible (Arch Linux Laptop)
-      - sudo pacman -S ansible
+      - ```sudo pacman -S ansible```
+      - ```ansible --version```
+      - Make sure your ssh key for root works
+      - ```ansible -u root -i 97.107.136.196, -m shell -a 'hostname' all```
       - 
+
     -Prometheus Stuff
       - Plain ol Prometheus: 
         - https://prometheus.io/docs/prometheus/latest/getting_started/
