@@ -165,7 +165,8 @@ Prometheus node_exporter is a widely used tool that exposes system metrics. Inst
           - Configure the Grafana server to start at boot:
           - ```sudo systemctl enable grafana-server.service```
           - https://grafana.com/docs/grafana/latest/getting-started/build-first-dashboard/
-          - 
+          - Next GO THROUGH THIS DOC:
+          - https://grafana.com/docs/grafana/latest/datasources/add-a-data-source/
 
           - Then, install Ansible on your laptop and write some Ansible to install and configure Grafana on your linode Control instance. Maybe save docker for your golang fileserver
           app since it's going to need to be deployed to more than one fileserver, and since
