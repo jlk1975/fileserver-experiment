@@ -72,9 +72,9 @@
           - Start up a Node Exporter on localhost
           - Start up a Prometheus instance on localhost that's configured to scrape metrics from the running Node Exporter
           - The Prometheus Node Exporter is a single static binary that you can install via tarball. Once you've downloaded it from the Prometheus downloads page extract it, and run it:
-          - ```wget https://github.com/prometheus/node_exporter/releases/download/v*/node_exporter-*.*-amd64.tar.gz```
-          - ```tar xvfz node_exporter-*.*-amd64.tar.gz```
-          - ```cd node_exporter-*.*-amd64```
+          - ```wget https://github.com/prometheus/node_exporter/releases/download/v1.4.0/node_exporter-1.4.0.linux-amd64.tar.gz```
+          - ```tar xvf node_exporter-1.4.0.linux-amd64.tar.gz```
+          - ```cd node_exporter-1.4.0.linux-amd64```
           - ```./node_exporter```
         
 
