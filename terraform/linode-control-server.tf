@@ -12,11 +12,11 @@ provider "linode" {
 }
 
 resource "linode_instance" "terraform-control" {
-        image = "linode/ubuntu18.04"
+        image = "linode/centos-stream9"
         label = "Terraform-Control"
         group = "Terraform"
         region = "us-east"
         type = "g6-nanode-1"
-        authorized_keys = [ "YOUR_PUBLIC_SSH_KEY" ]
+        authorized_keys = [var.authorized_keys]
         root_pass = var.root_pass
 }
