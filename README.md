@@ -41,6 +41,13 @@
       - ```terraform plan -var-file="secret.tfvars"```
       - ```terraform apply -var-file="secret.tfvars"```
       - 
+    -Prometheus Stuff
+      - Plain ol Prometheus: 
+        - https://prometheus.io/docs/prometheus/latest/getting_started/
+      - Prometheus node_exporter: 
+        - https://prometheus.io/download/#node_exporter
+      - Prometheus node_exporter installed using Ansible:
+        - https://github.com/cloudalchemy/ansible-node-exporter
     -Install Ansible (Laptop)
       - next steps, install the linode cli, then
       - login to your new file server instance and get a golang file server
