@@ -6,14 +6,13 @@ terraform {
     }
   }
 }
-
 provider "linode" {
   token = var.linode_token
 }
 
+
 resource "linode_firewall" "my_firewall" {
   label = "my_firewall"
-
 
  inbound {
     label    = "allow-ssh"
@@ -34,6 +33,15 @@ resource "linode_firewall" "my_firewall" {
   }
 
   inbound {
+    label    = "allow-http-prometheus"
+    action   = "ACCEPT"
+    protocol = "TCP"
+    ports    = "9090"
+    ipv4     = ["0.0.0.0/0"]
+    ipv6     = ["::/0"]
+  }
+
+  inbound {
     label    = "allow-https"
     action   = "ACCEPT"
     protocol = "TCP"
@@ -44,29 +52,11 @@ resource "linode_firewall" "my_firewall" {
 
   inbound_policy = "DROP"
 
-/*
-  outbound {
-    label    = "reject-http"
-    action   = "DROP"
-    protocol = "TCP"
-    ports    = "80"
-    ipv4     = ["0.0.0.0/0"]
-    ipv6     = ["::/0"]
-  }
-
-  outbound {
-    label    = "reject-https"
-    action   = "DROP"
-    protocol = "TCP"
-    ports    = "443"
-    ipv4     = ["0.0.0.0/0"]
-    ipv6     = ["::/0"]
-  }
-*/
   outbound_policy = "ACCEPT"
 
   linodes = [linode_instance.terraform-control.id]
 }
+
 
 resource "linode_stackscript" "terraform-control" {
   label = "foo"

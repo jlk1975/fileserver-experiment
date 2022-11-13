@@ -1,5 +1,8 @@
 # fileserver-experiment
 
+## Demo Commands
+```while :; do fallocate -l 10MB file.$(date +"%m_%d_%Y_%H_%M_%S").img; sleep 5; done```
+
 ## Setup
 
 - East Coast

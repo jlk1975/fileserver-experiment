@@ -9,6 +9,13 @@ scrape_configs:
 - job_name: '{{  server  }}'
     scrape_interval: 5s
     static_configs:
-      - targets: ['{{  server  }}:9100']
+      # - targets: ['{{  server  }}:9100']
+      - targets: ['localhost:9100']
     metrics_path: /metrics
   {% endfor %}
+- job_name: 'node_test'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['localhost:9100']
+        labels:
+          group: 'controller-group'

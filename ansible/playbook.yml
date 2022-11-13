@@ -2,3 +2,5 @@
 - hosts: controller_servers
   roles:
     - grafana
+    - prometheus
+    - prometheus-node-exporter

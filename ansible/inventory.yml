@@ -1,10 +1,10 @@
 all:
   hosts:
-    97.107.136.196: #controller01
+    104.200.30.126: #controller01
   children:
     controller_servers:
       hosts:
-        97.107.136.196: #controller01 
+        104.200.30.126: #controller01 
     # file_servers:
       # hosts:
         # XX.XXX.XXX.XXX: #fileserver01
