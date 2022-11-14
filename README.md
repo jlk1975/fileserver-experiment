@@ -1,6 +1,8 @@
 # fileserver-experiment
 
-## Demo Commands
+## Handy Commands
+```ansible-playbook -u root -i ./inventory.yml -l controller_servers playbook.yml```
+```terraform apply -var-file="secret.tfvars"```
 ```while :; do fallocate -l 10MB file.$(date +"%m_%d_%Y_%H_%M_%S").img; sleep 5; done```
 ```hile :; do fallocate -l 250MB file.$(date +"%m_%d_%Y_%H_%M_%S").img; df -h .;sleep 5; done```
 ## Setup

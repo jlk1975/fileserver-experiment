@@ -10,7 +10,7 @@ provider "linode" {
   token = var.linode_token
 }
 
-
+/*
 resource "linode_firewall" "my_firewall" {
   label = "my_firewall"
 
@@ -80,3 +80,4 @@ resource "linode_instance" "terraform-control" {
 
         stackscript_id = linode_stackscript.terraform-control.id
 }
+*/
