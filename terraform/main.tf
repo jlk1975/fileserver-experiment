@@ -10,7 +10,7 @@ provider "linode" {
   token = var.linode_token
 }
 
-
+/*
 resource "linode_firewall" "my_firewall" {
   label = "my_firewall"
 
@@ -22,7 +22,7 @@ resource "linode_firewall" "my_firewall" {
     ipv4     = ["0.0.0.0/0"]
     ipv6     = ["::/0"]
   }
-/*
+
   inbound {
     label    = "allow-http"
     action   = "ACCEPT"
@@ -49,7 +49,7 @@ resource "linode_firewall" "my_firewall" {
     ipv4     = ["0.0.0.0/0"]
     ipv6     = ["::/0"]
   }
-*/
+
   inbound_policy = "DROP"
 
   outbound_policy = "ACCEPT"
@@ -80,3 +80,4 @@ resource "linode_instance" "terraform-gpserver" {
 
         stackscript_id = linode_stackscript.terraform-gpserver.id
 }
+*/
